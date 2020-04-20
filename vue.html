@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/element-ui@2.12.0/lib/index.js"></script>
+	<!-- 引入组件库 -->
+ 	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+	<style>
+.el-row {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+
+
+	<style>
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  .avatar {
+    width: 178px;
+    height: 178px;
+    display: block;
+  }
+</style>
+	</style>
+	<style>
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+     background-color: #99a9bf;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+     background-color: #d3dce6;
+  }
+</style>
+	</head>
+  <body>
+   
+<div id="app">
+<el-row>
+  <el-col :span="12"><div class="grid-content bg-purple-dark"></div></el-col>
+</el-row>
+<el-row>
+  <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
+</el-row>
+<el-row>
+  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+</el-row>
+<el-row>
+  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+</el-row>
+<el-row>
+  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+</el-row>
+</div>
+<div id="app2">
+<el-row>
+  <el-button>默认按钮</el-button>
+  <el-button type="primary">主要按钮</el-button>
+  <el-button type="success">成功按钮</el-button>
+  <el-button type="info">信息按钮</el-button>
+  <el-button type="warning">警告按钮</el-button>
+  <el-button type="danger">危险按钮</el-button>
+</el-row>
+
+<el-row>
+  <el-button plain>朴素按钮</el-button>
+  <el-button type="primary" plain>主要按钮</el-button>
+  <el-button type="success" plain>成功按钮</el-button>
+  <el-button type="info" plain>信息按钮</el-button>
+  <el-button type="warning" plain>警告按钮</el-button>
+  <el-button type="danger" plain>危险按钮</el-button>
+</el-row>
+
+<el-row>
+  <el-button round>圆角按钮</el-button>
+  <el-button type="primary" round>主要按钮</el-button>
+  <el-button type="success" round>成功按钮</el-button>
+  <el-button type="info" round>信息按钮</el-button>
+  <el-button type="warning" round>警告按钮</el-button>
+  <el-button type="danger" round>危险按钮</el-button>
+</el-row>
+
+<el-row>
+  <el-button icon="el-icon-search" circle></el-button>
+  <el-button type="primary" icon="el-icon-edit" circle></el-button>
+  <el-button type="success" icon="el-icon-check" circle></el-button>
+  <el-button type="info" icon="el-icon-message" circle></el-button>
+  <el-button type="warning" icon="el-icon-star-off" circle></el-button>
+  <el-button type="danger" icon="el-icon-delete" circle></el-button>
+</el-row>
+</div>
+<div id="app3">
+  <el-link >默认链接</el-link>
+  <el-link type="primary"  >主要链接</el-link>
+  <el-link type="success"  >成功链接</el-link>
+  <el-link type="warning"  >警告链接</el-link>
+  <el-link type="danger"  >危险链接</el-link>
+  <el-link type="info"  >信息链接</el-link>
+</div>
+<div id="app4"> 
+  <el-radio v-model="radio" label="1">备选项</el-radio>
+  <el-radio v-model="radio" label="2">备选项</el-radio> 
+</div>
+<div id="app5">
+<template>
+  <el-checkbox-group v-model="checkList">
+    <el-checkbox label="复选框 A"></el-checkbox>
+    <el-checkbox label="复选框 B"></el-checkbox>
+    <el-checkbox label="复选框 C"></el-checkbox>
+    <el-checkbox label="禁用" disabled></el-checkbox>
+    <el-checkbox label="选中且禁用" disabled></el-checkbox>
+  </el-checkbox-group>
+</template>
+</div>
+
+<div id="app6">
+<el-input v-model="input" placeholder="请输入内容"></el-input>
+<el-input placeholder="请输入密码"	size="mini" v-model="input" show-password></el-input>
+<el-input
+  type="textarea"
+  :rows="2"
+  placeholder="请输入内容"
+  v-model="textarea">
+</el-input>
+
+</div>
+
+<div id="app7">
+<template>
+  <el-select v-model="value" placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+</div>
+
+<div id="app8">
+<template>
+  <el-select v-model="value1" multiple placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+
+  <el-select
+    v-model="value2"
+    multiple
+    collapse-tags
+    style="margin-left: 20px;"
+    placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+</div>
+<div id="app9">
+<el-switch	  v-model="value" ></el-switch>
+<el-switch
+  v-model="value"
+  active-text="按月付费"
+  inactive-text="按年付费"
+  active-color="#13ce66"
+  inactive-color="#ff4949">
+</el-switch>
+</div>
+<div id="app10">
+<template>
+  <div class="block">
+    <span class="demonstration">默认</span>
+    <el-slider v-model="value1"></el-slider>
+  </div>
+  <div class="block">
+    <span class="demonstration">自定义初始值</span>
+    <el-slider v-model="value2"></el-slider>
+  </div>
+  <div class="block">
+    <span class="demonstration">隐藏 Tooltip</span>
+    <el-slider v-model="value3" :show-tooltip="false"></el-slider>
+  </div>
+  <div class="block">
+    <span class="demonstration">格式化 Tooltip</span>
+    <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
+  </div>
+  <div class="block">
+    <span class="demonstration">禁用</span>
+    <el-slider v-model="value5" disabled></el-slider>
+  </div>
+</template>
+</div>
+<!-- ------------------111111111111111-------------------------- -->
+<div id="1111111">1111111111111111111111111111</div>
+<div id="app11">
+<el-upload
+  class="upload-demo"
+  action="https://jsonplaceholder.typicode.com/posts/"
+  :on-preview="handlePreview"
+  :on-remove="handleRemove"
+  :before-remove="beforeRemove"
+  multiple
+  :limit="3"
+  :on-exceed="handleExceed"
+  :file-list="fileList">
+  <el-button size="small" type="primary">点击上传</el-button>
+  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+</el-upload>
+</div>
+<div id="app12">
+<el-upload
+  class="avatar-uploader"
+  action="https://jsonplaceholder.typicode.com/posts/"
+  :show-file-list="false"
+  :on-success="handleAvatarSuccess"
+  :before-upload="beforeAvatarUpload">
+  <img v-if="imageUrl" :src="imageUrl" class="avatar">
+  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+</el-upload>
+</div>
+<div id="app13">
+<el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" size="mini">
+  <el-form-item label="密码" prop="pass">
+    <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+  </el-form-item>
+  <el-form-item label="确认密码" prop="checkPass">
+    <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+  </el-form-item>
+  <el-form-item label="年龄" prop="age">
+    <el-input v-model.number="ruleForm.age"></el-input>
+  </el-form-item>
+  <el-form-item>
+    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+    <el-button @click="resetForm('ruleForm')">重置</el-button>
+  </el-form-item>
+</el-form>
+</div>
+<div id="app14">
+<el-table
+    :data="tableData"
+    stripe
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+</div>
+<div id="app15">
+<el-tag>标签一</el-tag>
+<el-tag type="success">标签二</el-tag>
+<el-tag type="info">标签三</el-tag>
+<el-tag type="warning">标签四</el-tag>
+<el-tag type="danger">标签五</el-tag>
+<el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress>
+<el-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></el-progress>
+<el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></el-progress>
+<el-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></el-progress>
+</div>
+<!-- ------------------------------  16    -------------------------------- -->
+<div id="app16">
+<el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+
+<el-pagination
+  background
+  layout="prev, pager, next"
+  :total="1000">
+</el-pagination>
+
+<template>
+  <el-alert
+    title="成功提示的文案"
+    type="success">
+  </el-alert>
+  <el-alert
+    title="消息提示的文案"
+    type="info">
+  </el-alert>
+  <el-alert
+    title="警告提示的文案"
+    type="warning">
+  </el-alert>
+  <el-alert
+    title="错误提示的文案"
+    type="error">
+  </el-alert>
+</template>
+</div>
+<div id="app17">
+	<template>
+  <el-button :plain="true" @click="open">打开消息提示</el-button>
+  <el-button :plain="true" @click="openVn">VNode</el-button>
+</template>
+<template>
+  <el-button :plain="true" @click="open1">消息</el-button>
+  <el-button :plain="true" @click="open2">成功</el-button>
+  <el-button :plain="true" @click="open3">警告</el-button>
+  <el-button :plain="true" @click="open4">错误</el-button>
+</template>
+<template>
+  <el-button type="text" @click="open10">点击打开 Message Box</el-button>
+</template>
+<template>
+  <el-button type="text" @click="open11">点击打开 Message Box</el-button>
+</template>
+</div>
+<div id="app18">
+
+<template>
+  <div class="block">
+    <el-carousel  height="150px">
+      <el-carousel-item v-for="item in 4" :key="item">
+        <a href=""><img src="./231906.jpg"/></a>
+      </el-carousel-item>
+    </el-carousel>
+  </div> 
+</template>
+</div>
+<br/>
+<br/>
+<br/>
+<div id="app6">
+</div>
+
+<!-- --------------------------------------- -->
+	<script >
+	new Vue().$mount('#app');
+	new Vue().$mount('#app2');
+	new Vue().$mount('#app3');
+	var Main = {
+		data () {
+		  return {
+			radio: '1'
+		  };
+		}
+	  }
+	var Ctor = Vue.extend(Main)
+	new Ctor().$mount('#app4')
+	var Main = {
+		data () {
+		  return {
+			checkList: ['选中且禁用','复选框 A']
+		  };
+		}
+	  };
+	var Ctor = Vue.extend(Main);
+	new Ctor().$mount('#app5');
+	
+<!-- ---------66666666------ -->
+	new Vue({
+		el:"#app6",
+		data:{input:"",textarea:""},
+	})
+	
+	new Vue({
+		el:"#app7",
+		data:{value:"",options:[{value:"111",label:"aaaaaa"},{value:"2222",label:"bbbbb"},{value:"3333",label:"ccccc"}]
+		}
+	})
+	new Vue({
+		el:"#app8",
+		data:{value1:"",value2:"",options:[{value:"111",label:"aaaaaa"},{value:"2222",label:"bbbbb"},{value:"3333",label:"ccccc"}]
+		}
+	})
+	new Vue({
+		el:"#app9",
+		data:{value:true}
+	})
+	
+	new Vue({
+		el:"#app10",
+		data:{value1:1,value2:2,value3:3,value4:0,value5:55,}
+	});
+	
+	<!-- ------------------111111111111111-------------------------- -->
+	new Vue({
+		el:"#app11",
+		data:{
+			fileList:[{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+		},
+		 methods: {
+			handleRemove(file, fileList) {
+			console.log(file, fileList);
+			},
+			handlePreview(file) {
+			console.log(file);
+			},
+			handleExceed(files, fileList) {
+			this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+			},
+			beforeRemove(file, fileList) {
+				return this.$confirm(`确定移除 ${ file.name }？`);
+			 }
+		}
+	});
+	
+	new Vue({
+		el:"#app12",
+		data:{
+			imageUrl: ''
+		},
+		methods: {
+			handleAvatarSuccess(res, file) {
+				this.imageUrl = URL.createObjectURL(file.raw);
+			},
+			beforeAvatarUpload(file) {
+				const isJPG = file.type === 'image/jpeg';
+				const isLt2M = file.size / 1024 / 1024 < 2;
+
+				if (!isJPG) {
+				  this.$message.error('上传头像图片只能是 JPG 格式!');
+				}
+				if (!isLt2M) {
+				  this.$message.error('上传头像图片大小不能超过 2MB!');
+				}
+				return isJPG && isLt2M;
+			}
+		}
+	});
+	
+	
+	
+	
+	var Main = {
+    data() {
+		var checkAge = (rule, value, callback) => {
+			if (!value) {
+			  return callback(new Error('年龄不能为空'));
+			}
+			setTimeout(() => {
+			  if (!Number.isInteger(value)) {
+				callback(new Error('请输入数字值'));
+			  } else {
+				if (value < 18) {
+				  callback(new Error('必须年满18岁'));
+				} else {
+				  callback();
+				}
+			  }
+			}, 1000);
+		};
+		var validatePass = (rule, value, callback) => {
+			if (value === '') {
+			  callback(new Error('请输入密码'));
+			} else {
+			  if (this.ruleForm.checkPass !== '') {
+				this.$refs.ruleForm.validateField('checkPass');
+			  }
+			  callback();
+			}
+		};
+		var validatePass2 = (rule, value, callback) => {
+			if (value === '') {
+			  callback(new Error('请再次输入密码'));
+			} else if (value !== this.ruleForm.pass) {
+			  callback(new Error('两次输入密码不一致!'));
+			} else {
+			  callback();
+			}
+		};
+		return {
+			ruleForm: {
+			  pass: '',
+			  checkPass: '',
+			  age: ''
+			},
+			rules: {
+			  pass: [
+				{ validator: validatePass, trigger: 'blur' }
+			  ],
+			  checkPass: [
+				{ validator: validatePass2, trigger: 'blur' }
+			  ],
+			  age: [
+				{ validator: checkAge, trigger: 'blur' }
+			  ]
+			}
+		};
+    },
+    methods: {
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+    }
+  }
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app13')
+	
+	new Vue({
+		el:"#app14",
+		data:{
+			tableData: [
+				{
+					date: '2016-05-02',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1518 弄'
+				}, {
+				  date: '2016-05-04',
+				  name: '王小虎',
+				  address: '上海市普陀区金沙江路 1517 弄'
+				}, {
+				  date: '2016-05-01',
+				  name: '王小虎',
+				  address: '上海市普陀区金沙江路 1519 弄'
+				}, {
+				  date: '2016-05-03',
+				  name: '王小虎',
+				  address: '上海市普陀区金沙江路 1516 弄'
+				}]
+		}
+	})
+	new Vue({el:"#app15"})
+	<!-- ---------------16-------------------- -->
+	new Vue({el:"#app16",
+		data:{
+			data: [{
+			  label: '一级 1',
+			  children: [{
+				label: '二级 1-1',
+				children: [{
+				  label: '三级 1-1-1'
+				}]
+			  }]
+			}, {
+			  label: '一级 2',
+			  children: [{
+				label: '二级 2-1',
+				children: [{
+				  label: '三级 2-1-1'
+				}]
+			  }, {
+				label: '二级 2-2',
+				children: [{
+				  label: '三级 2-2-1'
+				}]
+			  }]
+			}, {
+			  label: '一级 3',
+			  children: [{
+				label: '二级 3-1',
+				children: [{
+				  label: '三级 3-1-1'
+				}]
+			  }, {
+				label: '二级 3-2',
+				children: [{
+				  label: '三级 3-2-1'
+				}]
+			  }]
+			}],
+			defaultProps: {
+			  children: 'children',
+			  label: 'label'
+			},
+		},
+		
+		methods: {
+		  handleNodeClick(data) {
+			console.log(data);
+		  }
+		}
+	})
+	
+	new Vue({
+		el:"#app17",
+		methods:{
+			open(){
+				this.$message('这是一条消息提示');
+			},
+			openVn(){
+				const h = this.$createElement;
+				this.$message({
+				  message: h('p', null, [
+					h('span', null, '内容可以是 '),
+					h('i', { style: 'color: teal' }, 'VNode')
+				  ])
+				});
+			},
+
+			open1() {
+				this.$message({
+				  showClose: true,
+				  message: '这是一条消息提示'
+				});
+			},
+
+			open2() {
+				this.$message({
+				  showClose: true,
+				  message: '恭喜你，这是一条成功消息',
+				  type: 'success'
+				});
+			},
+
+			open3() {
+				this.$message({
+				  showClose: true,
+				  message: '警告哦，这是一条警告消息',
+				  type: 'warning'
+				});
+			},
+
+			open4() {
+				this.$message({
+				  showClose: true,
+				  message: '错了哦，这是一条错误消息',
+				  type: 'error'
+				});
+			},
+			open10() {
+				this.$alert('这是一段内容', '标题名称', {
+				  confirmButtonText: '确定',
+				  callback: action => {
+					this.$message({
+					  type: 'info',
+					  message: `action: ${ action }`
+					});
+				  }
+				});
+			  },
+			
+			open11() {
+				this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+				  confirmButtonText: '确定',
+				  cancelButtonText: '取消',
+				  type: 'warning',
+				  center: true
+				}).then(() => {
+				  this.$message({
+					type: 'success',
+					message: '删除成功!'
+				  });
+				}).catch(() => {
+				  this.$message({
+					type: 'info',
+					message: '已取消删除'
+				  });
+				});
+			  }
+		}
+	})
+	new Vue({el:"#app18"})
+	
+	
+	
+	
+	
+	
+	
+	<!-- ---------------16-------------------- -->
+	<!-- ---------------16-------------------- -->
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
